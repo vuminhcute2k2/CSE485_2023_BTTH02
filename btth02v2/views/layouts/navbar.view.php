@@ -1,16 +1,13 @@
 <?php
-$file = $_SERVER["SCRIPT_NAME"];
+$currPage = $_GET["controller"];
 
-$isAuthor = ($file == "/cse485_2023/views/admin/author.view.php")
-  || ($file == "/cse485_2023/views/admin/edit_author.view.php");
+$isAuthor = $currPage === 'author';
 
-$isCategory = ($file == "/cse485_2023/views/admin/category.view.php")
-  || ($file == "/cse485_2023/views/admin/edit_category.view.php");
+$isCategory = $currPage == 'category';
 
-$isArticle = ($file == "/cse485_2023/views/admin/article.view.php")
-  || ($file == "/cse485_2023/views/admin/edit_article.view.php");
+$isArticle = $currPage === 'article';
 
-$isHome = ($file == "/CSE485_2023_BTTH02/btth02v2/views/home/index.php");
+$isHome = $currPage === 'home';
 $isLogged = false;
 
 ?>
