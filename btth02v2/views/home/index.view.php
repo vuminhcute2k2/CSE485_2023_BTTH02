@@ -39,7 +39,6 @@ $articles = [
                 </div>
             <?php endforeach ?>
         </div>
-        </div>
     </main>
 
 </body>
