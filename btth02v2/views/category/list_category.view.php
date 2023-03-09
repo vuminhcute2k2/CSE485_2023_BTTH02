@@ -1,14 +1,14 @@
 <?php
-$categories = [
-  [
-    "ma_tloai" => '1',
-    "ten_tloai" => "nhac tru tinh"
-  ],
-  [
-    "ma_tloai" => '2',
-    "ten_tloai" => "rock"
-  ]
-];
+// $categories = [
+//   [
+//     "ma_tloai" => '1',
+//     "ten_tloai" => "nhac tru tinh"
+//   ],
+//   [
+//     "ma_tloai" => '2',
+//     "ten_tloai" => "rock"
+//   ]
+// ];
 ?>
 
 <html lang="en">
@@ -48,12 +48,12 @@ $categories = [
               <tr>
                 <th scope="row"><?php global $index;
                                 echo $index ?></th>
-                <td><?php echo $category['ten_tloai']; ?></td>
+                <td><?php echo $category->get_ten_tloai(); ?></td>
                 <td>
-                  <a href="edit_category.view.php?id=<?php echo $category['ma_tloai'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                  <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=category&action=edit&id=<?php echo $category->get_ma_tloai() ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                 </td>
                 <td>
-                  <a href=""><i class="fa-solid fa-trash"></i></a>
+                  <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=category&action=delete&id=<?php echo $category->get_ma_tloai() ?>"><i class="fa-solid fa-trash"></i></a>
                 </td>
               </tr>
             <?php $index++;

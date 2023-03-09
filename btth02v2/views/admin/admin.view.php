@@ -1,15 +1,8 @@
-<?php
-$authors = [];
-$users = [];
-$article = [];
-$categories = [];
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./statistic.css">
+  <link rel="stylesheet" href="./admin.css">
   <script src="/CSE485_2023_BTTH02/btth02v2/assets/bootstrap/js/bootstrap.min.js"></script>
   <title>Statistics</title>
 </head>
@@ -27,7 +20,7 @@ $categories = [];
             </h5>
 
             <h5 class="h1 text-center">
-              <?php echo sizeof($users); ?>
+              <?php echo $num_of_users; ?>
             </h5>
           </div>
         </div>
@@ -40,7 +33,7 @@ $categories = [];
               Thể loại
             </h5>
             <h5 class="h1 text-center">
-              <?php echo sizeof($categories); ?>
+              <?php echo $num_of_categories; ?>
             </h5>
           </div>
         </div>
@@ -54,7 +47,7 @@ $categories = [];
             </h5>
 
             <h5 class="h1 text-center">
-              <?php echo sizeof($authors); ?>
+              <?php echo $num_of_authors; ?>
             </h5>
           </div>
         </div>
@@ -68,7 +61,7 @@ $categories = [];
             </h5>
 
             <h5 class="h1 text-center">
-              <?php echo sizeof($article); ?>
+              <?php echo $num_of_articles; ?>
             </h5>
           </div>
         </div>

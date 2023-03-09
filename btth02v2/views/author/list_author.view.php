@@ -1,13 +1,3 @@
-<?php
-$authors = [
-  [
-    'ma_tgia' => '1',
-    'ten_tgia' => 'abc',
-    'hinh_tgia' => 'xyz',
-  ]
-];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +19,7 @@ $authors = [
   <main class="container mt-5 mb-5">
     <div class="row">
       <div class="col-sm">
-        <a href="edit_category.view.php?id=" class="btn btn-success">Thêm mới</a>
+        <a href="CSE485_2023_BTTH02/btth02v2/index.php?controller=member&action=edit&id=" class="btn btn-success">Thêm mới</a>
         <table class="table">
           <thead>
             <tr>
@@ -47,10 +37,10 @@ $authors = [
               <tr>
                 <th scope="row"><?php global $index;
                                 echo $index ?></th>
-                <td><?php echo $author['ten_tgia']; ?></td>
-                <td><?php echo $author['hinh_tgia']; ?></td>
+                <td><?php echo $author->getTen_tgia(); ?></td>
+                <td><?php echo $author->getHinh_tgia(); ?></td>
                 <td>
-                  <a href=edit_author.view.php?id=<?php echo $author['ma_tgia'] ?>><i class="fa-solid fa-pen-to-square"></i></a>
+                  <a href=/CSE485_2023_BTTH02/btth02v2/index.php?controller=member&action=edit&id=<?php echo $category->getMa_tgia() ?>><i class="fa-solid fa-pen-to-square"></i></a>
                 </td>
                 <td>
                   <a href=""><i class="fa-solid fa-trash"></i></a>

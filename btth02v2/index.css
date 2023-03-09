@@ -1,7 +1,5 @@
 @import url(/CSE485_2023_BTTH02/btth02v2/assets/bootstrap/css/bootstrap.min.css);
 
-:root{
-  --a : 1px;
-  --b : 2px;
-  --c : 3px;
+.self-center {
+  margin: auto !important;
 }

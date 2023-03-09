@@ -1,11 +1,3 @@
-<?php
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-$category = ["ten_tloai" => "sdf"];
-if ($id) {
-  // search for id
-}
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,22 +11,27 @@ if ($id) {
 </head>
 
 <body>
-  <?php include_once("./layouts/navbar.view.php") ?>
+  <?php include_once("../layouts/navbar.view.php") ?>
 
   <main class="container mt-5 mb-5">
     <div class="row">
       <div class="col-sm">
         <h3 class="text-center text-uppercase fw-bold"><?php echo $id ? "Sửa thông tin" : "Thêm" ?> thể loại</h3>
+        <?php include_once("../layouts/alert.view.php") ?>
         <form action="process_add_category.php" method="post">
 
           <div class="input-group mt-3 mb-3">
+            <input type="text" class="form-control" name="ma_tloai" value=<?php echo $id ? $id : "" ?> readonly>
+          </div>
+
+          <div class="input-group mt-3 mb-3">
             <span class="input-group-text" id="lblCatName">Tên thể loại</span>
-            <input type="text" class="form-control" name="txtCatName" value=<?php echo $id ? $category['ten_tloai'] : "asgd" ?>>
+            <input type="text" class="form-control" name="ten_tloai" value=<?php echo $id ? $category->getTen_tloai() : "" ?>>
           </div>
 
           <div class="form-group  float-end ">
             <input type="submit" value="Lưu lại" class="btn btn-primary">
-            <a href="category.view.php" class="btn btn-secondary ">Quay lại</a>
+            <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=category&action=index" class="btn btn-secondary ">Quay lại</a>
           </div>
         </form>
       </div>

@@ -1,19 +1,3 @@
-<?php
-$articles = [
-    [
-        'ma_bviet' => 1,
-        'tieude' => 'abc',
-        'ten_bhat' => 'glhf',
-        'noidung' => 'xyz',
-        'tomtat' => 'xyz',
-        'ngayviet' => '1/1/2022',
-        'hinhanh' => 'abc.png',
-        'ma_tloai' => 1,
-        'ma_tgia' => 1,
-    ]
-];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +18,7 @@ $articles = [
     <main class="container mt-5 mb-5">
         <div class="row">
             <div class="col-sm">
-                <a href="edit_category.view.php?id=" class="btn btn-success">Thêm mới</a>
+                <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=article&action=add_edit&id=" class="btn btn-success">Thêm mới</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -54,15 +38,15 @@ $articles = [
                             <tr>
                                 <th scope="row"><?php global $index;
                                                 echo $index ?></th>
-                                <td><?php echo $article['tieude']; ?></td>
-                                <td><?php echo $article['ten_bhat']; ?></td>
-                                <td><?php echo $article['ngayviet']; ?></td>
-                                <td><?php echo $article['hinhanh']; ?></td>
+                                <td><?php echo $article->getTieude(); ?></td>
+                                <td><?php echo $article->getTen_bhat(); ?></td>
+                                <td><?php echo $article->getNgayviet(); ?></td>
+                                <td><?php echo $article->get_hinhanh(); ?></td>
                                 <td>
-                                    <a href="edit_article.view.php?id=<?php echo $article['ma_bviet'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                    <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=article&action=add_edit&id=<?php echo $article->getMa_bviet() ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                 </td>
                                 <td>
-                                    <a href=""><i class="fa-solid fa-trash"></i></a>
+                                    <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=article&action=delete&id=<?php echo $article->getMa_bviet() ?>"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php $index++;
@@ -72,7 +56,6 @@ $articles = [
             </div>
         </div>
     </main>
-    <?php include_once("./layouts/footer.view.php") ?>
 </body>
 
 </html>

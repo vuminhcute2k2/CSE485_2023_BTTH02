@@ -1,11 +1,3 @@
-<?php
-$articles = [
-    ['ma_bviet' => 1, 'tieude' => 'Lorem ipsum dolor sit amet', 'tomtat' => 'Integer accumsan arcu eget semper molestie. Orci varius natoque penatibus et magnis dis parturient montes.', 'hinhanh' => ''],
-    ['ma_bviet' => 2, 'tieude' => 'Lorem ipsum dolor sit amet', 'tomtat' => 'Integer accumsan arcu eget semper molestie. Orci varius natoque penatibus et magnis dis parturient montes.', 'hinhanh' => ''],
-    ['ma_bviet' => 3, 'tieude' => 'Lorem ipsum dolor sit amet', 'tomtat' => 'Integer accumsan arcu eget semper molestie. Orci varius natoque penatibus et magnis dis parturient montes.', 'hinhanh' => ''],
-];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,10 +50,10 @@ $articles = [
             <?php foreach ($articles as $article) : ?>
                 <div class="col">
                     <div class="card">
-                        <img src="../../assets/images/songs/hardrock.jpg" class="card-img-top" alt="...">
+                        <img src=<?php $article->getHinhanh() ?> class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo $article['tieude'] ?></h5>
-                            <p class="card-text"><?php echo $article['tomtat'] ?></p>
+                            <h5 class="card-title"><?php echo $article->getTieude() ?></h5>
+                            <p class="card-text"><?php echo $article->getTomtat() ?></p>
                         </div>
                     </div>
                 </div>

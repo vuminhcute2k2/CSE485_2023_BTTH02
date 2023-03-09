@@ -11,12 +11,6 @@ $isHome = $currPage === 'home';
 $isLogged = false;
 
 ?>
-
-<!-- <ul>
-  <li><a href="./index.php">Trang chủ</a></li>
-  <li><a href="./index.php?controller=article&action=list">Bài viết</a></li>
-</ul> -->
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
   <div class="container-fluid">
     <div class="h3">

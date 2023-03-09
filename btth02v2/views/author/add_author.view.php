@@ -1,8 +1,3 @@
-<?php
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-$author = ["ten_tgia" => "mozart", "hinh_tgia" => 'abc.png'];
-?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,26 +11,30 @@ $author = ["ten_tgia" => "mozart", "hinh_tgia" => 'abc.png'];
 </head>
 
 <body>
-  <?php include_once("./layouts/navbar.view.php") ?>
+  <?php include_once("../layouts/navbar.view.php") ?>
 
   <main class="container mt-5 mb-5">
     <div class="row">
       <div class="col-sm">
         <h3 class="text-center text-uppercase fw-bold"><?php echo $id ? "Sửa thông tin" : "Thêm" ?> tác giả</h3>
+        <?php include_once("../layouts/alert.view.php") ?>
         <form action="process_add_category.php" method="post">
 
           <div class="input-group mt-3 mb-3">
+            <input type="text" class="form-control" name="ma_tgia" value=<?php echo $id ?> readonly>
+          </div>
+          <div class="input-group mt-3 mb-3">
             <span class="input-group-text" id="lblAuthName">Tên tác giả</span>
-            <input type="text" class="form-control" name="txtAuthName" value=<?php echo $id ? $author['ten_tgia'] : "" ?>>
+            <input type="text" class="form-control" name="ten_tgia" value=<?php echo $id ?>>
           </div>
           <div class="input-group mt-3 mb-3">
             <span class="input-group-text" id="lblImgAuth">Hình tác giả</span>
-            <input type="file" accept="image/png, image/jpeg" class="form-control" name="imgAuth" value=<?php echo $id ? $author['ten_tgia'] : "" ?>>
+            <input type="file" accept="image/png, image/jpeg" class="form-control" name="hinh_tgia" value=<?php echo $id ? $author->getHinh_tgia() : "" ?>>
           </div>
 
           <div class="form-group  float-end ">
             <input type="submit" value="Lưu lại" class="btn btn-primary">
-            <a href="author.view.php" class="btn btn-secondary ">Quay lại</a>
+            <a href="/CSE485_2023_BTTH02/btth02v2/index.php?controller=member&action=index" class="btn btn-secondary ">Quay lại</a>
           </div>
         </form>
       </div>
